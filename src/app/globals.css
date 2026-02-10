@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-peach-50: #fff5f0;
+  --color-peach-100: #ffe8dd;
+  --color-peach-200: #ffd5b8;
+  --color-peach-300: #ffbe98;
+  --color-peach-400: #fa9c86;
+  --color-peach-500: #e6af91;
+  --color-peach-600: #d68c75;
+  --color-peach-700: #b36b56;
+  --color-peach-800: #8f4d3d;
+  --color-peach-900: #6e3528;
+
+  --color-background: var(--color-peach-50);
+  --color-foreground: var(--color-peach-900);
+
+  --color-primary: var(--color-peach-500);
+  --color-secondary: var(--color-peach-300);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: var(--color-peach-900);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Custom Utilities */
+.text-stroke {
+  -webkit-text-stroke: 1px var(--color-peach-900);
+  color: transparent;
+}
+
+/* Wave Separator */
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.wave-bottom .shape-fill {
+  fill: #E6AF91;
+  /* Peach-500 equivalent */
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-peach-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-peach-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-peach-400);
+}
